@@ -1,0 +1,33 @@
+<h2 class =" text-center py-5">Bienvenido</h2>
+<form autocomplete="off"
+[formGroup] = 'miFormulario'
+(ngSubmit)="login()" >
+
+    <div class="mb-4">
+        <label for="email" class="form-label">Correo electronico</label>
+        <input type="email" 
+        class="form-control" 
+        formControlName="email"
+        placeholder="Ingrese su email"
+        >
+        <span class="focus-input100"></span>
+    </div>
+    <div class="mb-4">
+        <label for="password" class="form-label">Contraseña</label>
+        <input type="password" 
+        class="form-control"
+        formControlName="password" 
+        placeholder="Ingrese su contraseña" >
+        <span class="focus-input100"></span>
+    </div>
+    <div class="d-grid">
+        <button  class="btn btn-primary"
+        type="submit" 
+        [disabled]=> Iniciar sesión</button>
+    </div>
+
+    <div class="my-3">
+        <span>No tienes cuenta? <a routerLink='/auth/registro' href="#">Regístrate</a></span><br>
+        <span><a href="#">Recuperar Password</a></span>
+    </div>
+</form>

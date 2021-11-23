@@ -1,0 +1,105 @@
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script><script type="text/javascript">
+    $('#datepicker').datepicker({
+        weekStart: 1,
+        daysOfWeekHighlighted: "6,0",
+        autoclose: true,
+        todayHighlight: true,
+    });
+    $('#datepicker').datepicker("setDate", new Date());
+</script>
+
+<form  autocomplete="off"
+[formGroup] = 'miFormulario'
+(ngSubmit)="crearNuevoUsuario()">
+
+    <div class="mb-4">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="nombre" 
+        class="form-control" 
+        formControlName="nombre"
+        placeholder="Ingrese su nombre"
+        >
+        <span class="focus-input100"></span>
+    </div>
+   
+          
+   
+
+    <div class="mb-4">
+        <label for="apellidop" class="form-label">Apellido Paterno</label>
+        <input type="apellidop" 
+        class="form-control" 
+        formControlName="apellidop"
+        placeholder="Ingrese su apellido paterno"
+        >
+        <span class="focus-input100"></span>
+    </div>
+    <div class="mb-4">
+        <label for="apellidom" class="form-label">Apellido materno</label>
+        <input type="apellidom" 
+        class="form-control" 
+        formControlName="apellidom"
+        placeholder="Ingrese su apellido materno"
+        >
+        <span class="focus-input100"></span>
+    </div>
+
+    
+    <div class="mb-4">
+        <label  for="fechaNacimiento" class="form-label label-input100">Fecha de nacimiento</label>
+      
+        <input formControlName="fechaNacimiento" matInput type="text"         type="datetime-local" id="datetime"    class="form-select mb-3"   >
+  
+        <script type="text/javascript">
+          $("#datetime").datepicker({
+              format: 'L("yyyy-mm-dd")' // 'yyyy-mm-dd hh:ii' 
+          } );
+          </script>
+       
+    </div>
+
+
+
+  
+
+
+    <div class="mb-4">
+        <label for="numerotel" class="form-label">Numero de telefono</label>
+        <input type="numerotel" 
+        class="form-control" 
+        formControlName="telefono"
+        placeholder="Ingrese su Numero de telefono"
+        >
+        <span class="focus-input100"></span>
+    </div>
+
+    <div class="mb-4">
+        <label for="email" class="form-label">Correo electronico</label>
+        <input type="email" 
+        class="form-control" 
+        formControlName="email"
+        placeholder="Ingrese su email"
+        >
+        <span class="focus-input100"></span>
+    </div>
+    <div class="mb-4">
+        <label for="password" class="form-label">Contraseña</label>
+        <input type="password" 
+        class="form-control"
+        formControlName="password" 
+        placeholder="Ingrese su contraseña" >
+        <span class="focus-input100"></span>
+    </div>
+    <div class="d-grid">
+        <button  class="btn btn-primary"
+        type="submit" 
+        [disabled]=> Registro     </button>
+    </div>
+
+    <div class="my-3">
+        <span>¿ ya tienes una cuenta? <a routerLink='/auth/login' href="#">Ingresa aqui</a></span><br>
+      
+    </div>
+
+</form>
+<pre>{{miFormulario.value | json}}</pre>
