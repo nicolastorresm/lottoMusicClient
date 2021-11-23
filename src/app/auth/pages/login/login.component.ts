@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/modelo/usuario';
 import Swal from 'sweetalert2';
-import { AuthService } from '../../services/auth.service';
+import { AuthService } from '../../protected/videos/services/auth.service';
 
 @Component({
   selector: 'app-login',
