@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
 import { IUsuario } from '../../interfaces/IUsuario.interface';
 import { AuthService } from '../../services/auth.service';
 
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',

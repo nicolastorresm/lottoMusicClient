@@ -1,3 +1,4 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -6,25 +7,21 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { MainComponent } from './pages/main/main.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ListaVideosComponent } from './protected/videos/pages/lista-videos/lista-videos.component';
-import { ListaApuestasComponent } from './protected/videos/pages/lista-apuestas/lista-apuestas.component';
-import { DashboardComponent } from './protected/dashboard/dashboard/dashboard.component';
+
 
 
 @NgModule({
   declarations: [
-    LoginComponent,
-    RegisterComponent,
-    MainComponent,
-    ListaVideosComponent,
-    ListaApuestasComponent,
-    DashboardComponent
+  RegisterComponent,
+  MainComponent,
+  LoginComponent
    
   ],
   imports: [
     CommonModule,
     AuthRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ]
 })
 export class AuthModule { }
