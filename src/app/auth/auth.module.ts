@@ -10,11 +10,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 
 
+
 @NgModule({
   declarations: [
   RegisterComponent,
   MainComponent,
-  LoginComponent
+  LoginComponent,
+
    
   ],
   imports: [

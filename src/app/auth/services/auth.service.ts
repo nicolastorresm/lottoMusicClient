@@ -1,9 +1,13 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Usuario } from 'src/app/modelo/usuario';
+
 import { IUsuario } from '../interfaces/IUsuario.interface';
 import { environment } from '../../../environments/environment';
 import { Observable } from 'rxjs';
+import { Usuario } from '../../modelo/Usuario';
+
+
+
 
 @Injectable({
   providedIn: 'root'

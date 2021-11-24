@@ -1,3 +1,4 @@
+
 export class Usuario {
     id                : number;
     nombre            : string;
@@ -9,5 +10,5 @@ export class Usuario {
     password          : string;
     fechaCrea         : string;
     fechaactualiza    : string;
-    roles             : string[] = []
+  
 }
