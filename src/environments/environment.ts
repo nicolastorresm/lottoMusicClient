@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://localhost:8080'
+  baseUrl: 'http://localhost:8080',
+  api_key:  "AIzaSyBj6Wf_9Bx_mjiP1jHtpIHR_O0TTfjTn40",
+  urlYoutube:  "https://www.googleapis.com/youtube/v3/videos"
 };
 
 /*

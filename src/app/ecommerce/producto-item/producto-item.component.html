@@ -1,0 +1,22 @@
+<div class="card mb-2" >
+  <iframe width="100%" height="250px" [src]="productoApuesta.apuesta.video.idVideo | pipeyoutube" frameborder="0"
+  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  
+    <div class="card-body">
+      <h5 class="card-title">{{productoApuesta.apuesta.video.titulo}}</h5>
+      <p class="card-text">{{productoApuesta.apuesta.video.artista}}</p>
+      <p class="card-text">{{productoApuesta.apuesta.video.canal}}</p>
+      <hr>
+      <p class="card-text"> <mat-icon aria-hidden="false" > visibility</mat-icon> {{productoApuesta.vistas}}</p>
+      <p class="card-text"> <mat-icon aria-hidden="false" > rate_review</mat-icon>{{productoApuesta.comentarios}}</p>
+      <p class="card-text"> <mat-icon aria-hidden="false" > thumb_up</mat-icon>{{productoApuesta.likes}}</p>
+      <p class="card-text"> <mat-icon aria-hidden="false" > thumb_down</mat-icon>{{productoApuesta.dislikes}}</p>
+      
+      
+      <button class="btn btn-outline-danger"><i class="fas fa-cart-plus"></i>Apostar</button>
+    </div>
+  </div>
+
+  
+  
+ 

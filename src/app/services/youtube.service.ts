@@ -9,7 +9,7 @@ export class YoutubeService {
   //endpoint Canal search
   private urlSearch: string = "https://www.googleapis.com/youtube/v3";
   //endpoint Canal video
-  private urlVideo: string = "https://www.googleapis.com/youtube/v3";
+  private urlVideo: string = "https://www.googleapis.com/youtube/v3/videos";
   //apiKey goole
   private api_key: string = "AIzaSyBj6Wf_9Bx_mjiP1jHtpIHR_O0TTfjTn40";
   //idCanal

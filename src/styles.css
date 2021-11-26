@@ -1,3 +1,16 @@
+/*Nicolas*/
+.card-img-top {
+  width: 170px;
+  height: 230px;
+  align-self:center;
+  padding-top: 10px;
+}
+
+.material-icons-delete{
+  color:red;
+  cursor: pointer;
+}
+
 /* You can add global styles to this file, and also import other style files */
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/

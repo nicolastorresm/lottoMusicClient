@@ -3,9 +3,10 @@ import { ApuestasService } from '../../services/apuestas.service';
 
 import { VideoDeApuesta } from '../../../../auth/interfaces/video';
 import { ApuestaActiva } from '../../../../modelo/VideoApuesta';
-import { IVideo } from '../../interfaces/IApuesta';
+
 import { YoutubeService } from '../../../../services/youtube.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ApuestaProducto } from '../../interfaces/IApuesta';
 
 
 
@@ -26,16 +27,25 @@ export class ListadoApuestasComponent implements OnInit {
         
    }
 
-   
+   listaProductosApuesta: ApuestaProducto[] = [];
 
-  ngOnInit(): void {
-   
-    this.apuestaService.getApuestasActivas()
-   .subscribe( resp => {this.videosApuestasActivas = resp
-     console.log(this.videosApuestasActivas) }   )
+   async ngOnInit(): Promise<void> {
+    this.listaProductosApuesta = await this.apuestaService.getAllApuestas();
 
-    
+    console.log("lista en componenete",this.listaProductosApuesta)
+    /*this.apuestaService.getEstadisticas('VwoHNjMU0PU').subscribe(
+      (data)=>{
+        var sttigJson : string = JSON.stringify(data);
+        var json = JSON.parse(sttigJson);
+        console.log("vistas",json['items'][0]['statistics']['viewCount']);
+        console.log("comentarios",json['items'][0]['statistics']['commentCount']);
+
+      }*/
+  
   }
+
+  //Octavio
+  
   
     
   }

@@ -5,10 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './material/material.module';
+import { PipeyoutubePipe } from './pipe/pipeyoutube.pipe';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    
+    
   ],
   imports: [
     BrowserModule,
@@ -16,6 +20,9 @@ import { MaterialModule } from './material/material.module';
     HttpClientModule,
     MaterialModule
     
+  ],
+  exports: [
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
