@@ -32,12 +32,21 @@ export class LoginComponent implements OnInit {
     })
 
   ngOnInit(): void {
+    if(this.authService.isAuthenticated()){
+      Swal.fire('Login', `Hola ${this.authService.usuario.email} ya estás autenticado`,'info');
+      this.router.navigate(['/dashboard'])
+
+    }
   }
 
   
      login():void{
       console.log(this.miFormulario.value) 
-      this.usuario = this.miFormulario.value;
+      
+     
+      this.usuario.email = this.miFormulario.value.email
+      this.usuario.password =  this.miFormulario.value.password
+
       console.log('email',this.usuario.email) 
       console.log('pass',this.usuario.password) 
       

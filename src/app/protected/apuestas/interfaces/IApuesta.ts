@@ -1,3 +1,4 @@
+import { Usuario } from '../../../modelo/Usuario';
 export interface Estadistica{
     vistas:string,
     comentarios:string,
@@ -38,3 +39,26 @@ export interface ApuestaProducto{
     idVideo    : string ;
  
  }
+
+ export interface ApuestaVenta{
+    apuesta    : Apuesta,
+    comentarios: string;
+    likes      : string;
+    dislikes   : string;
+    vistas     : string ;
+    idVideo    : string ;
+    idUsuario  : number;
+ 
+ }
+
+ export interface ApuestaUsuario {
+   
+
+        apuesta :Apuesta;
+        vistas: number;
+        comentarios: number;
+        likes:number;
+        dislikes: number
+       
+    
+         }

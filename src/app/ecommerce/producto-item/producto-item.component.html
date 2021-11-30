@@ -1,22 +1,92 @@
-<div class="card mb-2" >
-  <iframe width="100%" height="250px" [src]="productoApuesta.apuesta.video.idVideo | pipeyoutube" frameborder="0"
-  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  
-    <div class="card-body">
-      <h5 class="card-title">{{productoApuesta.apuesta.video.titulo}}</h5>
-      <p class="card-text">{{productoApuesta.apuesta.video.artista}}</p>
-      <p class="card-text">{{productoApuesta.apuesta.video.canal}}</p>
-      <hr>
-      <p class="card-text"> <mat-icon aria-hidden="false" > visibility</mat-icon> {{productoApuesta.vistas}}</p>
-      <p class="card-text"> <mat-icon aria-hidden="false" > rate_review</mat-icon>{{productoApuesta.comentarios}}</p>
-      <p class="card-text"> <mat-icon aria-hidden="false" > thumb_up</mat-icon>{{productoApuesta.likes}}</p>
-      <p class="card-text"> <mat-icon aria-hidden="false" > thumb_down</mat-icon>{{productoApuesta.dislikes}}</p>
-      
-      
-      <button class="btn btn-outline-danger"><i class="fas fa-cart-plus"></i>Apostar</button>
-    </div>
-  </div>
 
-  
-  
- 
+    <div class="card mb-2" >
+      <iframe width="100%" height="250px" [src]="productoApuesta.apuesta.video.idVideo | pipeyoutube" frameborder="0"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      
+        <div class="card-body">
+          <h5 class="card-title">{{productoApuesta.apuesta.video.titulo}}</h5>
+          <p class="card-text">{{productoApuesta.apuesta.video.artista}}</p>
+          <p class="card-text">{{productoApuesta.apuesta.video.canal}}</p>
+          <p class="card-text">{{productoApuesta.apuesta.video.canal}}</p>
+          <p class="card-text">precio com {{productoApuesta.apuesta.preciov}}</p>
+          <hr>
+          <p class="card-text"> <mat-icon aria-hidden="false" > visibility</mat-icon> {{productoApuesta.vistas}}</p>
+          <p class="card-text"> <mat-icon aria-hidden="false" > rate_review</mat-icon>{{productoApuesta.comentarios}}</p>
+          <p class="card-text"> <mat-icon aria-hidden="false" > thumb_up</mat-icon>{{productoApuesta.likes}}</p>
+          <p class="card-text"> <mat-icon aria-hidden="false" > thumb_down</mat-icon>{{productoApuesta.dislikes}}</p>
+          
+          
+          <button (click)='open(content)' class="btn btn-outline-danger"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+           Apostar</button>
+    
+           <button (click)="agregarAlCarrito()" class="btn btn-outline-danger"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+            prueba</button>
+        </div>
+      </div>
+    
+    
+      <ng-template #content let-modal>
+      <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">New Friend</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        
+        <form  autocomplete="off"
+        [formGroup] = 'miFormulario'
+        (ngSubmit)= "agregarApuestaUsuario()"> 
+          <label></label>
+      
+    
+       
+          <div class="form-group">
+            <label for="vistas">Vistas</label>
+            <div class="input-group">
+              <input type ="number" id="vistas" name="vistas" class="form-control" formControlName="vistas">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="comentarios">Comentarios</label>
+            <div class="input-group">
+              <input type ="number" id="comentarios" name="comentarios" class="form-control" formControlName="comentarios">
+            </div>
+          </div>
+    
+          <div class="form-group">
+            <label for="likes">Likes</label>
+            <div class="input-group">
+              <input type ="number" id="likes" name="likes" class="form-control" formControlName="likes">
+            </div>
+          </div>
+    
+          <div class="form-group">
+            <label for="dislikes">Dislikes</label>
+            <div class="input-group">
+              <input type ="number" id="dislikes" name="dislikes" class="form-control" formControlName="dislikes">
+            </div>
+          </div>
+          <div>
+          <div class="border text-center">
+            <button data-dismiss="modal" type="submit" class="btn btn-info">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+      </div>
+    </ng-template>
+
+
+
+
+
+<div  *ngFor="let item of lista">
+
+{{item.apuesta.id}}
+{{item.likes}}
+{{item.apuesta.video.artista}}
+

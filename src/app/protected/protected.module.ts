@@ -7,15 +7,20 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ListadoApuestasComponent } from './apuestas/pages/listado-apuestas/listado-apuestas.component';
 
 
+
+
+
 @NgModule({
   declarations: [
     DashboardComponent,
     ListadoApuestasComponent,
     
+    
   ],
   imports: [
     CommonModule,
     ProtectedRoutingModule,
+  
 
   ]
 })

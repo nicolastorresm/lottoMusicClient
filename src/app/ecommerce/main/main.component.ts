@@ -4,21 +4,25 @@ import { ApuestaActiva } from '../../modelo/VideoApuesta';
 import { ApuestaProducto } from '../../protected/apuestas/interfaces/IApuesta';
 
 @Component({
-  selector: 'app-producto-list',
-  templateUrl: './producto-list.component.html',
+  selector: 'app-main',
+  templateUrl: './main.component.html',
   styles: [
   ]
 })
-export class ProductoListComponent implements OnInit {
-
+export class MainComponent implements OnInit {
   constructor(private apuestaService:ApuestasService) { }
 
+  videosApuestasActivas:ApuestaActiva[]
+
+  listaProductosApuesta: ApuestaProducto[] = [];
 
   async ngOnInit(): Promise<void> {
 
-    
+    this.listaProductosApuesta = await this.apuestaService.getAllApuestas();
+     console.log("lista en componenete",this.listaProductosApuesta)
+  
    
    }
    
-}
 
+}

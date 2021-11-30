@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { EcommerceRoutingModule } from './ecommerce-routing.module';
@@ -12,6 +12,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {MatIconModule} from '@angular/material/icon';
 import { MaterialModule } from '../material/material.module';
 import { PipeyoutubePipe } from '../pipe/pipeyoutube.pipe';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MainComponent } from './main/main.component';
+import { ListaApuestasComponent } from './lista-apuestas/lista-apuestas.component';
+import { ListaApuestaItemComponent } from './lista-apuesta-item/lista-apuesta-item.component';
 
 
 
@@ -22,7 +26,12 @@ import { PipeyoutubePipe } from '../pipe/pipeyoutube.pipe';
     PrincipalComponent,
     ProductoListComponent,
     ProductoItemComponent,
-    PipeyoutubePipe
+    PipeyoutubePipe,
+    MainComponent,
+    ListaApuestasComponent,
+    ListaApuestaItemComponent,
+    
+    
    
   ],
   imports: [
@@ -30,7 +39,13 @@ import { PipeyoutubePipe } from '../pipe/pipeyoutube.pipe';
     EcommerceRoutingModule,
     FontAwesomeModule,
     MaterialModule,
+    ReactiveFormsModule,
+    FormsModule
     
-  ]
+  ],
+  exports:[
+    ProductoItemComponent
+  ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class EcommerceModule { }

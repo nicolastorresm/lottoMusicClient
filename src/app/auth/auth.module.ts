@@ -11,11 +11,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 
 
+
+
 @NgModule({
   declarations: [
   RegisterComponent,
   MainComponent,
   LoginComponent,
+ 
 
    
   ],
@@ -24,6 +27,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     AuthRoutingModule,
     ReactiveFormsModule,
     HttpClientModule
+  ],exports:[
+    
   ]
 })
 export class AuthModule { }

@@ -1,21 +1,23 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { NgbModal,ModalDismissReasons } from "@ng-bootstrap/ng-bootstrap";
 import { ApuestasService } from '../../protected/apuestas/services/apuestas.service';
-import { ApuestaActiva } from '../../modelo/VideoApuesta';
-import { ApuestaProducto, ApuestaVenta,ApuestaUsuario } from '../../protected/apuestas/interfaces/IApuesta';
-import { ApuestaVentaModel } from '../../modelo/apuesta';
-import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { MessageService } from '../../services/message.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ApuestaActiva } from '../../modelo/VideoApuesta';
+import { ApuestaProducto,ApuestaVenta,ApuestaUsuario } from '../../protected/apuestas/interfaces/IApuesta';
+import { ApuestaVentaModel } from '../../modelo/apuesta';
+
 
 
 @Component({
-  selector: 'app-principal',
-  templateUrl: './principal.component.html',
+  selector: 'app-home',
+  templateUrl: './home.component.html',
   styles: [
   ]
 })
-export class PrincipalComponent implements OnInit {
+export class HomeComponent implements OnInit {
+
 
   constructor(private apuestaService:ApuestasService,
     private modalService:NgbModal,
@@ -143,6 +145,5 @@ miFormulario: FormGroup = this.fb.group({
       return `with: ${reason}`;
     }
   }
-
 
 }

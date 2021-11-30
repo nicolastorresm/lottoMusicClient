@@ -1,5 +1,6 @@
-import { Usuario } from 'src/app/modelo/usuario';
+
 import { Mvideo } from './video';
+import { Usuario } from './Usuario';
 
 
 export class ApuestaUsuario {

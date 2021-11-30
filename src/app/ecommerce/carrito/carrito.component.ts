@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ProductoItemComponent } from '../producto-item/producto-item.component'; 
+import { MessageService } from '../../services/message.service';
+import { ApuestaProducto, ApuestaVenta, ApuestaUsuario } from '../../protected/apuestas/interfaces/IApuesta';
+import { ApuestaProductoModel, ApuestaVentaModel, ApuestaUsuarioModel } from '../../modelo/apuesta';
 
 @Component({
   selector: 'app-carrito',
@@ -8,9 +12,48 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarritoComponent implements OnInit {
 
-  constructor() { }
+  @Input()
 
-  ngOnInit(): void {
+  
+  
+  @Input() carritoApuesta: ApuestaVenta
+
+  @Input() items:any = {} // lista q hujo
+
+   carritoItems=[];
+
+  
+
+   
+agregarNuevoPersonaje(){
+  console.log("czrrito component")
+}
+  
+
+  constructor(private messageService:MessageService) { 
+    
   }
 
+  ngOnInit(): void {
+/*      this.getItemApuesta(); */
+console.log("carritocomponent",this.carritoItems )
+  }
+
+  getItem():void{
+    this.messageService.getMessage()
+    .subscribe((resp:ApuestaProductoModel) =>{
+      const carItem = new ApuestaVentaModel(resp)
+      this.carritoItems.push(carItem)} 
+      ) }  
+
+     
+
+
+
+
+
+
+
+
 }
+
